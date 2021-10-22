@@ -57,6 +57,7 @@
         android:lines="1"
         android:maxLines="1"
         android:paddingStart="@dimen/_20dp"
+        android:outlineAmbientShadowColor="@color/black"
         android:singleLine="true"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"

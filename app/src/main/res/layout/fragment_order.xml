@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragment.OrderFragment">
+
+    <include layout="@layout/back_toolbar"
+        android:id="@+id/back_toolbar"/>
+
+    <EditText
+        android:id="@+id/search"
+        style="@style/SearchViewCustom"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginVertical="@dimen/_16dp"
+        android:hint="@string/search_title"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingStart="@dimen/_20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:fontFamily="@font/avenir_medium"
+        android:singleLine="true"
+        android:background="@drawable/search_view_background"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_toolbar" />
+
+    <ImageView
+        android:id="@+id/no_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <TextView
+        android:id="@+id/no_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_medium"
+        android:text="No result found"
+        app:layout_constraintEnd_toEndOf="@+id/no_result"
+        app:layout_constraintStart_toStartOf="@+id/no_result"
+        app:layout_constraintTop_toBottomOf="@+id/no_result" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
