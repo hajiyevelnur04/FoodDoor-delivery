@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Line Heights-->
+    <dimen name="line10">1dp</dimen>
+    <dimen name="line20">2dp</dimen>
+    <dimen name="line25">2.5dp</dimen>
+    <dimen name="line30">3dp</dimen>
+    <dimen name="line35">3.5dp</dimen>
+    <dimen name="line40">4dp</dimen>
+    <dimen name="line45">4.5dp</dimen>
+    <dimen name="line55">5.5dp</dimen>
+    <dimen name="line65">6.5dp</dimen>
+
+    <!--    Font Weights-->
+    <integer name="weight7">700</integer>
+    <integer name="weight6">600</integer>
+    <integer name="weight5">500</integer>
+    <integer name="weight4">400</integer>
+
+
+    <!--    Headings-->
+    <dimen name="h1">28sp</dimen>
+    <dimen name="h2">22sp</dimen>
+    <dimen name="h3">17sp</dimen>
+    <dimen name="h4">15sp</dimen>
+    <dimen name="h5">13sp</dimen>
+
+
+    <!--    Body texts-->
+    <dimen name="b0">16sp</dimen>
+    <dimen name="b1">15sp</dimen>
+    <dimen name="b2">14sp</dimen>
+    <dimen name="b3">13sp</dimen>
+    <dimen name="b4">12sp</dimen>
+
+
+
+    <!--    Footnotes & Help texts-->
+    <dimen name="f1">12sp</dimen>
+    <dimen name="f2">12sp</dimen>
+    <dimen name="f3">10sp</dimen>
+
+
+
+    <!--    Common-->
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_22dp">22dp</dimen>
+    <dimen name="_28dp">28dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_18dp">18dp</dimen>
+
+
+</resources>
