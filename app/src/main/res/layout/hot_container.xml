@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="hotViewModel"
-            type="com.runle.fooddoor.presentation.fragment.FilterBottomFragment">
+            name="test"
+            type="String">
 
         </variable>
 

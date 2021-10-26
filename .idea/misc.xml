@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/drawable/ripple_background_gray.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/drawable/search_view_background.xml" value="0.27239583333333334" />
         <entry key="app/src/main/res/drawable/sheet_view_back.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/back_toolbar.xml" value="0.5" />
         <entry key="app/src/main/res/layout/category_container.xml" value="0.33" />
         <entry key="app/src/main/res/layout/filter_container.xml" value="0.374886173383811" />

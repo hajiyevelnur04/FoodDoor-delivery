@@ -5,16 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
 import com.runle.fooddoor.model.PopularListEvent
 
 class HomeFragment : Fragment() {
 
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModel()
     private val binding: FragmentHomeBinding by lazy {
         FragmentHomeBinding.inflate(layoutInflater).apply {
-            viewModel = homeViewModel
+            binding.popular.viewModel = homeViewModel
             lifecycleOwner = this@HomeFragment
         }
     }

@@ -94,4 +94,21 @@ dependencies {
     // gson
     implementation "com.google.code.gson:gson:2.8.8"
 
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+
+    //koin injection
+    implementation "org.koin:koin-android-viewmodel:$koin"
+    implementation "org.koin:koin-android:$koin"
+
+    //okhttp request
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp"
+
+    // This is a logger with a small, extensible API which provides utility on top of Android's norma
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
 }

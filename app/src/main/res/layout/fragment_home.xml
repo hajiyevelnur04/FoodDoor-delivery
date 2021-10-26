@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.runle.fooddoor.presentation.fragment.home.HomeViewModel" />
+            name="test"
+            type="String" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -42,7 +42,6 @@
                 <include
                     android:id="@+id/popular"
                     layout="@layout/popular_container"
-                    app:itemViewModels="@{viewModel.data}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"

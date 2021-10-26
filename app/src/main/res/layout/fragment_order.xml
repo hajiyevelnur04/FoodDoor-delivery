@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragment.OrderFragment">
+    tools:context=".presentation.fragment.order.OrderFragment">
 
     <include layout="@layout/back_toolbar"
         android:id="@+id/back_toolbar"/>
@@ -39,7 +39,6 @@
         app:layout_constraintTop_toBottomOf="@+id/search" />
 
     <TextView
-        android:id="@+id/no_result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenir_medium"

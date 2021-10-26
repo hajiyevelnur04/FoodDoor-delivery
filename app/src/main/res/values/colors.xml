@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#0F6657</color>
-    <color name="gray_green">#afc7c3</color>
     <color name="bg_color">#f8f9fa</color>
     <color name="orange">#ef9c55</color>
     <color name="accent">#3d7368</color>
@@ -18,24 +16,12 @@
 
 
     <!--    White-->
-    <color name="white_75">#75FFFFFF</color>
-    <color name="white_60">#60FFFFFF</color>
-    <color name="white_40">#40FFFFFF</color>
-    <color name="white_F9">#f9f9f9</color>
     <!--    White-->
 
 
     <!--    Gray-->
     <color name="gray">#D1D1D1</color>
     <color name="gray1">#F3F3F5</color>
-    <color name="gray2">#CCCCD7</color>
-    <color name="gray3">#9496AC</color>
-    <color name="gray4">#E1E1E9</color>
-    <color name="gray5">#65666D</color>
-    <color name="gray6">#AAAAAF</color>
-    <color name="gray7">#1CFFFFFF</color>
-    <color name="gray8">#C6C6DB</color>
-    <color name="gray9">#0DFFFFFF</color>
     <color name="gray10">#E3E3E9</color>
     <color name="gray11">#508F92A1</color>
     <color name="dark_gray">#01000D</color>

@@ -45,6 +45,6 @@ class BindableRecyclerViewAdapter : RecyclerView.Adapter<BindableViewHolder>() {
 class BindableViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(itemViewModel: ItemViewModel) {
-        binding.setVariable(BR.viewModel, itemViewModel)
+        binding.setVariable(BR.itemViewModel, itemViewModel)
     }
 }

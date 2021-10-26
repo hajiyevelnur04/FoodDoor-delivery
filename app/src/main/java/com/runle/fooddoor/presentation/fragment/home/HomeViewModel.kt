@@ -14,7 +14,7 @@ import com.runle.fooddoor.viewmodel.itemviewmodel.HeaderViewModel
 import com.runle.fooddoor.viewmodel.itemviewmodel.PopularItemListingViewModel
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val dataProvider: DataProvider): ViewModel() {
+class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
 
     companion object {
         const val HEADER_ITEM = 0
