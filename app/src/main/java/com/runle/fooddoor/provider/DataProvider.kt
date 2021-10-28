@@ -25,9 +25,9 @@ class DataProvider {
 
     private fun getPopularString(): String {
         return """
-            [{"image":R.drawable.test_food,"title":"Rice"},
-            {"image":R.drawable.test_food,"title":"Noodle"},
-            {"image":R.drawable.test_food,"title":"Salad"}]""".trimIndent()
+            [{"image":"R.drawable.test_food","title":"Rice"},
+            {"image":"R.drawable.test_food","title":"Noodle"},
+            {"image":"R.drawable.test_food","title":"Salad"}]""".trimIndent()
     }
 
     private fun getCategoryString(): String {

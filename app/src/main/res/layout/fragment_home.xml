@@ -24,7 +24,7 @@
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_100dp"
-                    android:background="@color/primary"
+                    android:background="@drawable/radius_2dp_color_primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

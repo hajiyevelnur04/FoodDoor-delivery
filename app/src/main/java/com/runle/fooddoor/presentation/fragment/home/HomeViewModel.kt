@@ -48,11 +48,11 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         popularById.keys.forEach {
             viewData.add(HeaderViewModel(it))
             val popularItems = popularById[it]
-            popularItems?.forEach {popularItems: PopularModel ->
-                val item = if (popularItems.isHeader) {
+            popularItems?.forEach {popularItem: PopularModel ->
+                val item = if (popularItem.isHeader) {
                     HeaderViewModel("Popular")
                 } else {
-                    PopularItemListingViewModel(popularItems, ::onPopularItemListingClicked)
+                    PopularItemListingViewModel(popularItem, ::onPopularItemListingClicked)
                 }
                 viewData.add(item)
             }

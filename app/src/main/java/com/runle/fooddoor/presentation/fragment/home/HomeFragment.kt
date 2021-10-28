@@ -14,9 +14,16 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
     private val binding: FragmentHomeBinding by lazy {
         FragmentHomeBinding.inflate(layoutInflater).apply {
-            binding.popular.viewModel = homeViewModel
-            lifecycleOwner = this@HomeFragment
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        homeViewModel.events.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleAction(it)
+            }
+        })
     }
 
     override fun onCreateView(
@@ -24,12 +31,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        homeViewModel.events.observe(viewLifecycleOwner,{
-            it.getContentIfNotHandled()?.let {
-                handleAction(it)
-            }
-        })
-
+        binding.popular.viewModel = homeViewModel
         // Inflate the layout for this fragment
         return binding.root
     }
