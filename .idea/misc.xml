@@ -45,7 +45,7 @@
         <entry key="app/src/main/res/layout/item_popular_container.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/item_voucher_container.xml" value="0.25625" />
         <entry key="app/src/main/res/layout/main_toolbar.xml" value="0.221875" />
-        <entry key="app/src/main/res/layout/partial_item_categories.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/partial_item_categories.xml" value="0.18" />
         <entry key="app/src/main/res/layout/partial_item_category.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_explore.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_header.xml" value="0.2" />

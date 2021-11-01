@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -101,10 +102,19 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_fav,
                     R.id.nav_market,
                     R.id.nav_profile -> {
-                        //supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                        //binding.navView.visibility = View.VISIBLE
                     }
                     else -> {
-                        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                        //binding.navView.visibility = View.GONE
+                    }
+                }
+
+                when (destination.id) {
+                    R.id.categoryDetailFragment -> {
+                        binding.navView.visibility = View.GONE
+                    }
+                    else -> {
+                        binding.navView.visibility = View.VISIBLE
                     }
                 }
             }
