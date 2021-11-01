@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.runle.fooddoor.presentation.fragment.explore.ExploreViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_16dp"
+    android:layout_marginVertical="@dimen/_16dp">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/default_toolbar"/>
+
+    <EditText
+        android:id="@+id/search"
+        style="@style/SearchViewCustom"
+        android:hint="@string/search_title"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingStart="@dimen/_20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:fontFamily="@font/avenir_medium"
+        android:singleLine="true"
+        android:background="@drawable/search_view_background"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/_8dp"
+        android:id="@+id/explore_container"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_width="match_parent"
+        tools:itemCount="6"
+        app:spanCount="2"
+        app:itemViewModels="@{viewModel.exploreData}"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        tools:listitem="@layout/partial_item_explore"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

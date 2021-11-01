@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragment.order.OrderFragment">
 
@@ -12,12 +13,10 @@
     <EditText
         android:id="@+id/search"
         style="@style/SearchViewCustom"
-        android:layout_marginHorizontal="@dimen/_16dp"
         android:layout_marginVertical="@dimen/_16dp"
         android:hint="@string/search_title"
         android:lines="1"
         android:maxLines="1"
-        android:paddingStart="@dimen/_20dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:fontFamily="@font/avenir_medium"

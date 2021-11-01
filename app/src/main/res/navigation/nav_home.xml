@@ -10,5 +10,13 @@
         android:name="com.runle.fooddoor.presentation.fragment.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/categoryDetailFragment"
+        android:name="com.runle.fooddoor.presentation.fragment.home.category.CategoryDetailFragment"
+        android:label="fragment_category_detail"
+        tools:layout="@layout/fragment_category_detail" />
 </navigation>

@@ -6,13 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.runle.fooddoor.R
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
 import com.runle.fooddoor.model.BannerListEvent
 import com.runle.fooddoor.model.CategoryListEvent
 import com.runle.fooddoor.model.PopularListEvent
 import com.runle.fooddoor.model.VoucherListEvent
+import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeFragment : Fragment() {
 
@@ -57,6 +62,10 @@ class HomeFragment : Fragment() {
         binding.category.categoryContainer.layoutManager = GridLayoutManager(requireContext(),4)
         binding.category.viewModel = homeViewModel
         binding.voucher.viewModel = homeViewModel
+
+        binding.category.seeAll.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_categoryDetailFragment)
+        }
         // Inflate the layout for this fragment
         return binding.root
     }

@@ -25,4 +25,10 @@
     <color name="gray10">#E3E3E9</color>
     <color name="gray11">#508F92A1</color>
     <color name="dark_gray">#01000D</color>
+
+    <!--    Green-->
+    <color name="green">#53B175</color>
+    <color name="green70">#7053B175</color>
+    <color name="green30">#3053B175</color>
+    <color name="green10">#1053B175</color>
 </resources>

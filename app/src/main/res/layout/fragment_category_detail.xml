@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.runle.fooddoor.presentation.fragment.home.category.CategoryDetailViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginVertical="@dimen/_16dp"
+        tools:context=".presentation.fragment.home.category.CategoryDetailFragment">
+
+        <include layout="@layout/back_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_detail_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:padding="@dimen/_12dp"
+            android:scrollbars="none"
+            app:itemViewModels="@{viewModel.categoryData}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:spanCount="2"
+            tools:itemCount="8"
+            tools:listitem="@layout/partial_item_categories" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
