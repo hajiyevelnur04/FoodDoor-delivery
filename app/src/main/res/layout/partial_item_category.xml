@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -8,30 +7,23 @@
 
         <variable
             name="itemViewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.PopularItemListingViewModel" />
+            type="com.runle.fooddoor.viewmodel.itemviewmodel.CategoryItemListingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/_8dp"
-        android:background="@drawable/radius_2dp"
-        android:orientation="vertical"
-        android:onClick="@{() -> itemViewModel.onClick()}"
-        android:padding="@dimen/_8dp">
-
-        <!-- android:src="@{itemViewModel.popularModel.image}"-->
+        android:layout_marginRight="@dimen/_4dp"
+        android:padding="@dimen/_12dp">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            tools:src="@drawable/test_food"
-            android:src="@drawable/test_food"
+            android:background="@drawable/radius_8dp"
+            android:padding="@dimen/_4dp"
+            android:src="@drawable/category_item_test"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/title"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,16 +35,18 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="center"
-            android:maxLines="1"
+            android:maxLines="2"
             android:paddingBottom="@dimen/_1dp"
-            android:text="@{itemViewModel.popularModel.title}"
+            android:text="@{itemViewModel.model.title}"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/image"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@+id/image"
             tools:text="Rice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
-
-
 

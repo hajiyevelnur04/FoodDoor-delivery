@@ -5,10 +5,8 @@
 
     <data>
         <variable
-            name="test"
-            type="String">
-
-        </variable>
+            name="viewModel"
+            type="com.runle.fooddoor.presentation.fragment.home.HomeViewModel" />
 
     </data>
 
@@ -18,32 +16,28 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/popular_container"
+            android:id="@+id/banner_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:overScrollMode="never"
             android:scrollbars="none"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:itemViewModels="@{viewModel.bannerData}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:spanCount="2"
             tools:itemCount="2"
-            tools:listitem="@layout/item_banner_container" />
+            tools:listitem="@layout/partial_item_banner" />
 
-        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-            android:id="@+id/pageIndicatorView"
+        <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+            android:id="@+id/indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/popular_container"
-            app:dotsColor="@color/primary"
-            app:selectedDotColor="@color/orange"
-            app:dotsCornerRadius="8dp"
-            app:dotsSize="12dp" />
+            app:layout_constraintTop_toBottomOf="@+id/banner_recyclerview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

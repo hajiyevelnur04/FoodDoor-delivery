@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
  * Created by elnur on 26.10.21
  */
 @Parcelize
-data class Banner(
+data class BannerModel(
     @SerializedName("id")
     val id:Int?,
     @SerializedName("cover")

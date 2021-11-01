@@ -1,17 +1,12 @@
 package com.runle.fooddoor.presentation.fragment.home
 
-import android.icu.text.CaseMap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.runle.fooddoor.viewmodel.itemviewmodel.ItemViewModel
-import com.runle.fooddoor.model.Event
-import com.runle.fooddoor.model.PopularListEvent
-import com.runle.fooddoor.model.PopularModel
+import com.runle.fooddoor.model.*
 import com.runle.fooddoor.provider.DataProvider
-import com.runle.fooddoor.viewmodel.itemviewmodel.HeaderViewModel
-import com.runle.fooddoor.viewmodel.itemviewmodel.PopularItemListingViewModel
+import com.runle.fooddoor.viewmodel.itemviewmodel.*
 import kotlinx.coroutines.launch
 
 class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
@@ -21,11 +16,30 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         const val LISTING_ITEM = 1
     }
 
-    val data: LiveData<List<ItemViewModel>> get() = _data
-    private val _data = MutableLiveData<List<ItemViewModel>>(emptyList())
+    val popularData: LiveData<List<ItemViewModel>> get() = _popularData
+    private val _popularData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val events: LiveData<Event<PopularListEvent>> get() = _events
-    private val _events = MutableLiveData<Event<PopularListEvent>>()
+    val eventsPopular: LiveData<Event<PopularListEvent>> get() = _eventsPopular
+    private val _eventsPopular = MutableLiveData<Event<PopularListEvent>>()
+
+
+    val bannerData: LiveData<List<ItemViewModel>> get() = _bannerData
+    private val _bannerData = MutableLiveData<List<ItemViewModel>>(emptyList())
+
+    val eventsBanner: LiveData<Event<BannerListEvent>> get() = _eventsBanner
+    private val _eventsBanner = MutableLiveData<Event<BannerListEvent>>()
+
+    val categoryData: LiveData<List<ItemViewModel>> get() = _categoryData
+    private val _categoryData = MutableLiveData<List<ItemViewModel>>(emptyList())
+
+    val eventsCategory: LiveData<Event<CategoryListEvent>> get() = _eventsCategory
+    private val _eventsCategory = MutableLiveData<Event<CategoryListEvent>>()
+
+    val voucherData: LiveData<List<ItemViewModel>> get() = _voucherData
+    private val _voucherData = MutableLiveData<List<ItemViewModel>>(emptyList())
+
+    val eventsVoucher: LiveData<Event<VoucherListEvent>> get() = _eventsVoucher
+    private val _eventsVoucher = MutableLiveData<Event<VoucherListEvent>>()
 
 
     init {
@@ -34,19 +48,61 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
 
     private fun loadData() {
         viewModelScope.launch {
+            // create banner list
+
+            val bannerList = dataProvider.getBannerListData()
+
+            val bannerById = bannerList.groupBy { it.id }
+
+            val bannerViewData = createBannerViewData(bannerById)
+            _bannerData.postValue(bannerViewData)
+
+            // create popular list
             val popularList = dataProvider.getPopularListData()
 
             val popularById = popularList.groupBy { it.title }
 
             val viewData = createViewData(popularById)
-            _data.postValue(viewData)
+            _popularData.postValue(viewData)
+
+            // create category list
+
+            val categoryList = dataProvider.getCategoryListData()
+
+            val categoryById = categoryList.groupBy { categoryModel->
+                categoryModel.id }
+
+            val categoryViewData = createCategoryViewData(categoryById)
+            _categoryData.postValue(categoryViewData)
+
+
+            // create category list
+
+            val voucherList = dataProvider.getVoucherListData()
+
+            val voucherById = voucherList.groupBy { voucher->
+                voucher.id }
+
+            val voucherViewData = createVoucherViewData(voucherById)
+            _voucherData.postValue(voucherViewData)
+
         }
+    }
+
+    private fun createBannerViewData(bannerById: Map<Int?, List<BannerModel>>): List<ItemViewModel> {
+        val viewData = mutableListOf<ItemViewModel>()
+        bannerById.keys.forEach {
+            bannerById[it]?.forEach {bannerModel: BannerModel ->
+                viewData.add(BannerItemListingViewModel(bannerModel,:: onBannerItemListingClicked))
+            }
+        }
+
+        return viewData
     }
 
     private fun createViewData(popularById: Map<String, List<PopularModel>>): List<ItemViewModel> {
         val viewData = mutableListOf<ItemViewModel>()
         popularById.keys.forEach {
-            viewData.add(HeaderViewModel(it))
             val popularItems = popularById[it]
             popularItems?.forEach {popularItem: PopularModel ->
                 val item = if (popularItem.isHeader) {
@@ -61,8 +117,43 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         return viewData
     }
 
+    private fun createCategoryViewData(categoryById: Map<Long?, List<CategoryModel>>): List<ItemViewModel> {
+        val viewData = mutableListOf<ItemViewModel>()
+        categoryById.keys.forEach {
+            categoryById[it]?.forEach {categoryModel: CategoryModel ->
+                viewData.add(CategoryItemListingViewModel(categoryModel,:: onCategoryItemListingClicked))
+            }
+        }
+
+        return viewData
+    }
+
+
+    private fun createVoucherViewData(voucherById: Map<Int?, List<VoucherModel>>): List<ItemViewModel> {
+        val viewData = mutableListOf<ItemViewModel>()
+        voucherById.keys.forEach {
+            voucherById[it]?.forEach {voucher: VoucherModel ->
+                viewData.add(VoucherItemListingViewModel(voucher,:: onVoucherItemListingClicked))
+            }
+        }
+
+        return viewData
+    }
+
     private fun onPopularItemListingClicked(title: String) {
-        _events.postValue(Event(PopularListEvent.ShowSelectedPopular(title)))
+        _eventsPopular.postValue(Event(PopularListEvent.ShowSelectedPopular(title)))
+    }
+
+    private fun onBannerItemListingClicked(title: String) {
+        _eventsBanner.postValue(Event(BannerListEvent.ShowSelectedPopular(title)))
+    }
+
+    private fun onCategoryItemListingClicked(title: String) {
+        _eventsCategory.postValue(Event(CategoryListEvent.ShowSelectedPopular(title)))
+    }
+
+    private fun onVoucherItemListingClicked(title: String) {
+        _eventsVoucher.postValue(Event(VoucherListEvent.ShowSelectedPopular(title)))
     }
 
 }

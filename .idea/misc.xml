@@ -29,8 +29,9 @@
         <entry key="app/src/main/res/drawable/sheet_view_back.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="app/src/main/res/layout/back_toolbar.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/banner_container.xml" value="0.25" />
         <entry key="app/src/main/res/layout/basket_count_layout.xml" value="0.67" />
-        <entry key="app/src/main/res/layout/category_container.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/category_container.xml" value="0.25" />
         <entry key="app/src/main/res/layout/filter_container.xml" value="0.374886173383811" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom.xml" value="0.25" />
@@ -40,13 +41,16 @@
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.175" />
         <entry key="app/src/main/res/layout/hot_container.xml" value="0.35688405797101447" />
         <entry key="app/src/main/res/layout/item_banner_container.xml" value="0.35688405797101447" />
-        <entry key="app/src/main/res/layout/item_category_container.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_category_container.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_filter_container.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/item_popular_container.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/item_voucher_container.xml" value="0.25625" />
         <entry key="app/src/main/res/layout/main_toolbar.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/partial_item_banner.xml" value="0.2726449275362319" />
+        <entry key="app/src/main/res/layout/partial_item_category.xml" value="0.25" />
         <entry key="app/src/main/res/layout/partial_item_header.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_popular.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/partial_item_voucher.xml" value="0.2726449275362319" />
         <entry key="app/src/main/res/layout/popular_container.xml" value="0.22" />
         <entry key="app/src/main/res/layout/voucher_container.xml" value="0.25625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.221875" />

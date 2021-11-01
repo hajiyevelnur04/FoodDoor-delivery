@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
+import com.runle.fooddoor.model.BannerListEvent
+import com.runle.fooddoor.model.CategoryListEvent
 import com.runle.fooddoor.model.PopularListEvent
+import com.runle.fooddoor.model.VoucherListEvent
 
 class HomeFragment : Fragment() {
 
@@ -19,9 +24,24 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeViewModel.events.observe(viewLifecycleOwner,{ event ->
+        homeViewModel.eventsBanner.observe(viewLifecycleOwner,{ event ->
             event.getContentIfNotHandled()?.let {
-                handleAction(it)
+                handleActionBanner(it)
+            }
+        })
+        homeViewModel.eventsPopular.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleActionPopular(it)
+            }
+        })
+        homeViewModel.eventsVoucher.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleActionVoucher(it)
+            }
+        })
+        homeViewModel.eventsCategory.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleActionCategory(it)
             }
         })
     }
@@ -31,14 +51,36 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        binding.lifecycleOwner = this@HomeFragment
         binding.popular.viewModel = homeViewModel
+        binding.banner.viewModel = homeViewModel
+        binding.category.categoryContainer.layoutManager = GridLayoutManager(requireContext(),4)
+        binding.category.viewModel = homeViewModel
+        binding.voucher.viewModel = homeViewModel
         // Inflate the layout for this fragment
         return binding.root
     }
 
-    private fun handleAction(it: PopularListEvent) {
+    private fun handleActionBanner(it: BannerListEvent) {
+        when(it){
+            is BannerListEvent.ShowSelectedPopular -> showPopularItemDetail()
+        }
+    }
+
+    private fun handleActionPopular(it: PopularListEvent) {
         when(it){
             is PopularListEvent.ShowSelectedPopular -> showPopularItemDetail()
+        }
+    }
+
+    private fun handleActionCategory(it: CategoryListEvent) {
+        when(it){
+            is CategoryListEvent.ShowSelectedPopular -> showPopularItemDetail()
+        }
+    }
+    private fun handleActionVoucher(it: VoucherListEvent) {
+        when(it){
+            is VoucherListEvent.ShowSelectedPopular -> showPopularItemDetail()
         }
     }
 
