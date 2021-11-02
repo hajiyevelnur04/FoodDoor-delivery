@@ -8,7 +8,7 @@
 
         <variable
             name="itemViewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.PopularItemListingViewModel" />
+            type="com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +45,6 @@
             android:gravity="center"
             android:maxLines="1"
             android:paddingBottom="@dimen/_1dp"
-            android:text="@{itemViewModel.popularModel.title}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -111,5 +112,9 @@ dependencies {
 
     // This is a logger with a small, extensible API which provides utility on top of Android's norma
     implementation "com.jakewharton.timber:timber:$timber_version"
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
 }

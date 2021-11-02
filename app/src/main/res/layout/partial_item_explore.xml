@@ -7,7 +7,7 @@
 
         <variable
             name="itemViewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.ExploreItemListingViewModel" />
+            type="com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +40,6 @@
         app:layout_constraintEnd_toEndOf="@+id/image"
         app:layout_constraintStart_toStartOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        android:text="@{itemViewModel.model.title}"
         tools:text="Frash Fruits &amp; Vegetable Typography" />
 
 

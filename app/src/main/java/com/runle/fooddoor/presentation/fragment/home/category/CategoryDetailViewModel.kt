@@ -4,9 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.runle.fooddoor.R
 import com.runle.fooddoor.model.*
 import com.runle.fooddoor.provider.DataProvider
-import com.runle.fooddoor.viewmodel.itemviewmodel.CategoriesItemListingViewModel
+import com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel
 import com.runle.fooddoor.viewmodel.itemviewmodel.ItemViewModel
 import kotlinx.coroutines.launch
 
@@ -18,8 +19,8 @@ class CategoryDetailViewModel(var dataProvider: DataProvider): ViewModel() {
     val categoryData: LiveData<List<ItemViewModel>> get() = _categoryData
     private val _categoryData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsCategory: LiveData<Event<CategoryListEvent>> get() = _eventsCategory
-    private val _eventsCategory = MutableLiveData<Event<CategoryListEvent>>()
+    val eventsCategory: LiveData<Event<ItemListEvent>> get() = _eventsCategory
+    private val _eventsCategory = MutableLiveData<Event<ItemListEvent>>()
 
     init {
         loadData()
@@ -42,14 +43,14 @@ class CategoryDetailViewModel(var dataProvider: DataProvider): ViewModel() {
         val viewData = mutableListOf<ItemViewModel>()
         exploreById.keys.forEach {
             exploreById[it]?.forEach {model: CategoryModel ->
-                viewData.add(CategoriesItemListingViewModel(model,:: onCategoryItemListingClicked))
+                viewData.add(ItemListingViewModel(model, R.layout.partial_item_categories,LISTING_ITEM,:: onCategoryItemListingClicked))
             }
         }
 
         return viewData
     }
 
-    private fun onCategoryItemListingClicked(title: String) {
-        _eventsCategory.postValue(Event(CategoryListEvent.ShowSelectedPopular(title)))
+    private fun onCategoryItemListingClicked(model: Any) {
+        _eventsCategory.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 }

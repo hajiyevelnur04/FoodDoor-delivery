@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "161568885540",
+    "project_id": "fooddoor-4ad2d",
+    "storage_bucket": "fooddoor-4ad2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161568885540:android:8d3c6ea6c7b31d434181b1",
+        "android_client_info": {
+          "package_name": "com.runle.fooddoor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161568885540-jm3fnnh7iu38sg3jq5mab38pkmepikft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.runle.fooddoor",
+            "certificate_hash": "06ffc28229a27dfbfc53cf8a35dc602664563a5b"
+          }
+        },
+        {
+          "client_id": "161568885540-835eboboo75bgk83hn3dlgj3sj8730qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhqEbpsDk2djZyMQ9POW2yaCmnL8noIAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161568885540-835eboboo75bgk83hn3dlgj3sj8730qp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

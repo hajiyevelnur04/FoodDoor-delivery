@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.runle.fooddoor.R
 import com.runle.fooddoor.model.*
 import com.runle.fooddoor.provider.DataProvider
 import com.runle.fooddoor.viewmodel.itemviewmodel.*
@@ -19,27 +20,27 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
     val popularData: LiveData<List<ItemViewModel>> get() = _popularData
     private val _popularData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsPopular: LiveData<Event<PopularListEvent>> get() = _eventsPopular
-    private val _eventsPopular = MutableLiveData<Event<PopularListEvent>>()
+    val eventsPopular: LiveData<Event<ItemListEvent>> get() = _eventsPopular
+    private val _eventsPopular = MutableLiveData<Event<ItemListEvent>>()
 
 
     val bannerData: LiveData<List<ItemViewModel>> get() = _bannerData
     private val _bannerData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsBanner: LiveData<Event<BannerListEvent>> get() = _eventsBanner
-    private val _eventsBanner = MutableLiveData<Event<BannerListEvent>>()
+    val eventsBanner: LiveData<Event<ItemListEvent>> get() = _eventsBanner
+    private val _eventsBanner = MutableLiveData<Event<ItemListEvent>>()
 
     val categoryData: LiveData<List<ItemViewModel>> get() = _categoryData
     private val _categoryData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsCategory: LiveData<Event<CategoryListEvent>> get() = _eventsCategory
-    private val _eventsCategory = MutableLiveData<Event<CategoryListEvent>>()
+    val eventsCategory: LiveData<Event<ItemListEvent>> get() = _eventsCategory
+    private val _eventsCategory = MutableLiveData<Event<ItemListEvent>>()
 
     val voucherData: LiveData<List<ItemViewModel>> get() = _voucherData
     private val _voucherData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsVoucher: LiveData<Event<VoucherListEvent>> get() = _eventsVoucher
-    private val _eventsVoucher = MutableLiveData<Event<VoucherListEvent>>()
+    val eventsVoucher: LiveData<Event<ItemListEvent>> get() = _eventsVoucher
+    private val _eventsVoucher = MutableLiveData<Event<ItemListEvent>>()
 
 
     init {
@@ -93,7 +94,8 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         val viewData = mutableListOf<ItemViewModel>()
         bannerById.keys.forEach {
             bannerById[it]?.forEach {bannerModel: BannerModel ->
-                viewData.add(BannerItemListingViewModel(bannerModel,:: onBannerItemListingClicked))
+                viewData.add(ItemListingViewModel(bannerModel, R.layout.partial_item_banner,
+                    LISTING_ITEM,:: onBannerItemListingClicked))
             }
         }
 
@@ -108,7 +110,7 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
                 val item = if (popularItem.isHeader) {
                     HeaderViewModel("Popular")
                 } else {
-                    PopularItemListingViewModel(popularItem, ::onPopularItemListingClicked)
+                    ItemListingViewModel(popularItem,R.layout.partial_item_popular, LISTING_ITEM, ::onPopularItemListingClicked)
                 }
                 viewData.add(item)
             }
@@ -121,7 +123,8 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         val viewData = mutableListOf<ItemViewModel>()
         categoryById.keys.forEach {
             categoryById[it]?.forEach {categoryModel: CategoryModel ->
-                viewData.add(CategoryItemListingViewModel(categoryModel,:: onCategoryItemListingClicked))
+                viewData.add(ItemListingViewModel(categoryModel,R.layout.partial_item_category,
+                    LISTING_ITEM,:: onCategoryItemListingClicked))
             }
         }
 
@@ -133,27 +136,28 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
         val viewData = mutableListOf<ItemViewModel>()
         voucherById.keys.forEach {
             voucherById[it]?.forEach {voucher: VoucherModel ->
-                viewData.add(VoucherItemListingViewModel(voucher,:: onVoucherItemListingClicked))
+                viewData.add(ItemListingViewModel(voucher,R.layout.partial_item_voucher,
+                    LISTING_ITEM,:: onVoucherItemListingClicked))
             }
         }
 
         return viewData
     }
 
-    private fun onPopularItemListingClicked(title: String) {
-        _eventsPopular.postValue(Event(PopularListEvent.ShowSelectedPopular(title)))
+    private fun onPopularItemListingClicked(model: Any) {
+        _eventsPopular.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
-    private fun onBannerItemListingClicked(title: String) {
-        _eventsBanner.postValue(Event(BannerListEvent.ShowSelectedPopular(title)))
+    private fun onBannerItemListingClicked(model: Any) {
+        _eventsBanner.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
-    private fun onCategoryItemListingClicked(title: String) {
-        _eventsCategory.postValue(Event(CategoryListEvent.ShowSelectedPopular(title)))
+    private fun onCategoryItemListingClicked(model: Any) {
+        _eventsCategory.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
-    private fun onVoucherItemListingClicked(title: String) {
-        _eventsVoucher.postValue(Event(VoucherListEvent.ShowSelectedPopular(title)))
+    private fun onVoucherItemListingClicked(model: Any) {
+        _eventsVoucher.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
 }

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentCategoryDetailBinding
-import com.runle.fooddoor.model.CategoryListEvent
+import com.runle.fooddoor.model.ItemListEvent
 
 class CategoryDetailFragment : Fragment() {
 
@@ -39,9 +39,9 @@ class CategoryDetailFragment : Fragment() {
         return binding.root
     }
 
-    private fun handleActionBanner(it: CategoryListEvent) {
+    private fun handleActionBanner(it: ItemListEvent) {
         when(it){
-            is CategoryListEvent.ShowSelectedPopular -> showPopularItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }
     }
 

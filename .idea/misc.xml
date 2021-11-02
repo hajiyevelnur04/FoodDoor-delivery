@@ -29,7 +29,8 @@
         <entry key="app/src/main/res/drawable/sheet_view_back.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="app/src/main/res/layout/back_toolbar.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/category_container.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/banner_container.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/category_container.xml" value="0.2953216374269006" />
         <entry key="app/src/main/res/layout/default_toolbar.xml" value="0.22" />
         <entry key="app/src/main/res/layout/filter_container.xml" value="0.374886173383811" />
         <entry key="app/src/main/res/layout/fragment_category_detail.xml" value="0.17291666666666666" />
@@ -45,11 +46,13 @@
         <entry key="app/src/main/res/layout/item_popular_container.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/item_voucher_container.xml" value="0.25625" />
         <entry key="app/src/main/res/layout/main_toolbar.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/partial_item_banner.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/partial_item_categories.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/partial_item_category.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/partial_item_category.xml" value="0.1" />
         <entry key="app/src/main/res/layout/partial_item_explore.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_header.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_popular.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/partial_item_voucher.xml" value="0.1" />
         <entry key="app/src/main/res/layout/popular_container.xml" value="0.22" />
         <entry key="app/src/main/res/layout/voucher_container.xml" value="0.25625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.221875" />
@@ -57,7 +60,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

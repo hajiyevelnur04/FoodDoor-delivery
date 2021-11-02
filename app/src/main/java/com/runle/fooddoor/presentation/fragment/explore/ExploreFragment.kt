@@ -6,12 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.runle.fooddoor.R
 import com.runle.fooddoor.databinding.FragmentExploreBinding
-import com.runle.fooddoor.databinding.FragmentHomeBinding
-import com.runle.fooddoor.model.BannerListEvent
-import com.runle.fooddoor.model.ExploreListEvent
-import com.runle.fooddoor.presentation.fragment.home.HomeViewModel
+import com.runle.fooddoor.model.ItemListEvent
 import kotlinx.android.synthetic.main.fragment_explore.view.*
 import kotlinx.android.synthetic.main.partial_item_explore.view.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -46,9 +42,9 @@ class ExploreFragment : Fragment() {
         return binding.root
     }
 
-    private fun handleActionExplore(it: ExploreListEvent) {
+    private fun handleActionExplore(it: ItemListEvent) {
         when(it){
-            is ExploreListEvent.ShowSelectedPopular -> showItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showItemDetail()
         }
     }
 

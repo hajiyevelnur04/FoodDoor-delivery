@@ -7,7 +7,7 @@
 
         <variable
             name="itemViewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.VoucherItemListingViewModel" />
+            type="com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel" />
     </data>
 
     <ImageView

@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.runle.fooddoor.R
 import com.runle.fooddoor.model.*
 import com.runle.fooddoor.provider.DataProvider
-import com.runle.fooddoor.viewmodel.itemviewmodel.BannerItemListingViewModel
-import com.runle.fooddoor.viewmodel.itemviewmodel.ExploreItemListingViewModel
+import com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel
 import com.runle.fooddoor.viewmodel.itemviewmodel.ItemViewModel
 import kotlinx.coroutines.launch
 
@@ -20,8 +20,8 @@ class ExploreViewModel (var dataProvider: DataProvider): ViewModel() {
     val exploreData: LiveData<List<ItemViewModel>> get() = _exploreData
     private val _exploreData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsExplore: LiveData<Event<ExploreListEvent>> get() = _eventsExplore
-    private val _eventsExplore = MutableLiveData<Event<ExploreListEvent>>()
+    val eventsExplore: LiveData<Event<ItemListEvent>> get() = _eventsExplore
+    private val _eventsExplore = MutableLiveData<Event<ItemListEvent>>()
 
     init {
         loadData()
@@ -44,15 +44,15 @@ class ExploreViewModel (var dataProvider: DataProvider): ViewModel() {
         val viewData = mutableListOf<ItemViewModel>()
         exploreById.keys.forEach {
             exploreById[it]?.forEach {model: ExploreModel ->
-                viewData.add(ExploreItemListingViewModel(model,:: onExploreItemListingClicked))
+                viewData.add(ItemListingViewModel(model, R.layout.partial_item_explore,LISTING_ITEM,:: onExploreItemListingClicked))
             }
         }
 
         return viewData
     }
 
-    private fun onExploreItemListingClicked(title: String) {
-        _eventsExplore.postValue(Event(ExploreListEvent.ShowSelectedPopular(title)))
+    private fun onExploreItemListingClicked(model: Any) {
+        _eventsExplore.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
 }

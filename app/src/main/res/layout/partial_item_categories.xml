@@ -7,7 +7,7 @@
 
         <variable
             name="itemViewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.CategoriesItemListingViewModel" />
+            type="com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +37,6 @@
             android:gravity="center"
             android:maxLines="2"
             android:paddingBottom="@dimen/_1dp"
-            android:text="@{itemViewModel.model.title}"
             android:textColor="@color/black"
             android:layout_marginTop="@dimen/_8dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.runle.fooddoor.R
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
-import com.runle.fooddoor.model.BannerListEvent
-import com.runle.fooddoor.model.CategoryListEvent
-import com.runle.fooddoor.model.PopularListEvent
-import com.runle.fooddoor.model.VoucherListEvent
+import com.runle.fooddoor.model.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeFragment : Fragment() {
@@ -70,26 +67,26 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private fun handleActionBanner(it: BannerListEvent) {
+    private fun handleActionBanner(it: ItemListEvent) {
         when(it){
-            is BannerListEvent.ShowSelectedPopular -> showPopularItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }
     }
 
-    private fun handleActionPopular(it: PopularListEvent) {
+    private fun handleActionPopular(it: ItemListEvent) {
         when(it){
-            is PopularListEvent.ShowSelectedPopular -> showPopularItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }
     }
 
-    private fun handleActionCategory(it: CategoryListEvent) {
+    private fun handleActionCategory(it: ItemListEvent) {
         when(it){
-            is CategoryListEvent.ShowSelectedPopular -> showPopularItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }
     }
-    private fun handleActionVoucher(it: VoucherListEvent) {
+    private fun handleActionVoucher(it: ItemListEvent) {
         when(it){
-            is VoucherListEvent.ShowSelectedPopular -> showPopularItemDetail()
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }
     }
 

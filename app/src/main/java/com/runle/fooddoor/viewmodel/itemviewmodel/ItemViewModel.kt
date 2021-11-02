@@ -7,4 +7,5 @@ interface ItemViewModel {
     val layoutId: Int
     val viewType: Int
         get() = 0
+    val _model: Any
 }
