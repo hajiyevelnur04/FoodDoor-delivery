@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.runle.fooddoor.presentation.fragment.tracking.TrackingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.tracking.TrackingFragment">
+
+        <include layout="@layout/back_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popular_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:layout_marginTop="@dimen/_32dp"
+            app:spanCount="1"
+            tools:itemCount="5"
+            tools:listitem="@layout/partial_item_tracking" />
+
+
+        <include
+            android:id="@+id/item_order"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            layout="@layout/item_order"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="com.runle.fooddoor.model.TrackItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/status"
+            android:layout_width="@dimen/_12dp"
+            android:layout_height="@dimen/_12dp"
+            android:background="@drawable/oval_image"
+            app:layout_constraintBottom_toBottomOf="@+id/status_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/status_text" />
+
+        <View
+            android:id="@+id/lineViewBottom"
+            android:layout_width="2dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/status"
+            app:layout_constraintStart_toStartOf="@+id/status"
+            app:layout_constraintTop_toBottomOf="@+id/status"
+            tools:background="@color/gray" />
+
+        <View
+            android:id="@+id/lineViewUp"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/status"
+            app:layout_constraintEnd_toEndOf="@+id/status"
+            app:layout_constraintStart_toStartOf="@+id/status"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/status_text"
+            style="@style/Body3"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tracking"
+            android:layout_marginStart="@dimen/_16dp"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toEndOf="@+id/status"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Send request" />
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/status_text"
+            app:layout_constraintStart_toEndOf="@+id/status_text"
+            app:layout_constraintTop_toTopOf="@+id/status_text"
+            style="@style/Body1"
+            tools:text="14:21" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
