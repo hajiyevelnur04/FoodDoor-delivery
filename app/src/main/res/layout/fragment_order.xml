@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/_16dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragment.order.OrderFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.fragment.order.ComingFragment">
 
-    <include layout="@layout/back_toolbar"
-        android:id="@+id/back_toolbar"/>
+    <data>
 
-    <EditText
-        android:id="@+id/search"
-        style="@style/SearchViewCustom"
-        android:layout_marginVertical="@dimen/_16dp"
-        android:hint="@string/search_title"
-        android:lines="1"
-        android:maxLines="1"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:fontFamily="@font/avenir_medium"
-        android:singleLine="true"
-        android:background="@drawable/search_view_background"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_toolbar" />
+        <variable
+            name="test"
+            type="String" />
+    </data>
 
-    <ImageView
-        android:id="@+id/no_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/avenir_medium"
-        android:text="No result found"
-        app:layout_constraintEnd_toEndOf="@+id/no_result"
-        app:layout_constraintStart_toStartOf="@+id/no_result"
-        app:layout_constraintTop_toBottomOf="@+id/no_result" />
+        <include
+            android:id="@+id/header_toolbar"
+            layout="@layout/header_toolbar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_marginTop="@dimen/_32dp"
+            android:layout_width="match_parent"
+            android:background="@color/bg_color"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorGravity="stretch"
+            app:tabSelectedTextColor="@color/green"
+            app:tabIndicator="@drawable/tab_indicator"
+            style="@style/Body1"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_toolbar"
+             />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

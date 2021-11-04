@@ -5,15 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.runle.fooddoor.FilterType
+import com.google.android.material.tabs.TabLayoutMediator
+import com.runle.fooddoor.adapter.TabSelectionPageAdapter
 import com.runle.fooddoor.databinding.FragmentOrderBinding
-import com.runle.fooddoor.presentation.fragment.FilterBottomFragment
+import org.koin.android.ext.android.bind
 
 class OrderFragment : Fragment() {
+    val headerArray = arrayOf(
+        "Coming",
+        "History",
+        "Draft"
+    )
 
-    var filterType: FilterType? = null
-
-    private val binding:FragmentOrderBinding by lazy {
+    private val binding: FragmentOrderBinding by lazy {
         FragmentOrderBinding.inflate(layoutInflater)
     }
 
@@ -22,16 +26,16 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding.backToolbar.filter.setOnClickListener {
-            openFilter()
-        }
+        setupViewPager()
         return binding.root
     }
 
-    private fun openFilter() {
-        val bottomSheet = FilterBottomFragment()
-        bottomSheet.filterType = FilterType.OPTIONS
-        bottomSheet.show(childFragmentManager, bottomSheet.tag)
+    private fun setupViewPager() {
+        binding.viewPager.adapter = TabSelectionPageAdapter(childFragmentManager,lifecycle)
+        binding.viewPager.isSaveEnabled = false
+        TabLayoutMediator(binding.tabs,binding.viewPager){ tab, position->
+            tab.text = headerArray[position]
+        }.attach()
     }
 
 }
