@@ -9,7 +9,6 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.runle.fooddoor.databinding.ActivityMainBinding
 import com.runle.fooddoor.util.setupWithNavigationController
