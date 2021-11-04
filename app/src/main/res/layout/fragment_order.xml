@@ -21,12 +21,11 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            android:layout_marginTop="@dimen/_32dp"
+            android:layout_marginTop="@dimen/_8dp"
             android:layout_width="match_parent"
             android:background="@color/bg_color"
             app:tabMode="fixed"
             app:tabGravity="fill"
-            android:paddingHorizontal="@dimen/_16dp"
             app:tabIndicatorGravity="stretch"
             app:tabSelectedTextColor="@color/green"
             app:tabIndicator="@drawable/tab_indicator"
