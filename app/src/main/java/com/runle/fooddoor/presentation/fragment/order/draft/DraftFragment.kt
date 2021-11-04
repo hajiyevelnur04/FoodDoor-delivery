@@ -18,7 +18,7 @@ class DraftFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        draftViewModel.eventsPopular.observe(viewLifecycleOwner,{ event ->
+        draftViewModel.eventsDraft.observe(viewLifecycleOwner,{ event ->
             event.getContentIfNotHandled()?.let {
                 handleActionDraft(it)
             }

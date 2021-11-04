@@ -21,7 +21,7 @@
             android:overScrollMode="never"
             android:padding="@dimen/_12dp"
             android:scrollbars="none"
-            app:itemViewModels="@{viewModel.popularData}"
+            app:itemViewModels="@{viewModel.draftData}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

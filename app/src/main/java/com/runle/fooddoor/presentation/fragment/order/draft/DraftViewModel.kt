@@ -17,11 +17,11 @@ class DraftViewModel(var dataProvider: DataProvider): ViewModel() {
         const val LISTING_ITEM = 1
     }
 
-    val popularData: LiveData<List<ItemViewModel>> get() = _popularData
-    private val _popularData = MutableLiveData<List<ItemViewModel>>(emptyList())
+    val draftData: LiveData<List<ItemViewModel>> get() = _draftData
+    private val _draftData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
-    val eventsPopular: LiveData<Event<ItemListEvent>> get() = _eventsPopular
-    private val _eventsPopular = MutableLiveData<Event<ItemListEvent>>()
+    val eventsDraft: LiveData<Event<ItemListEvent>> get() = _eventsDraft
+    private val _eventsDraft = MutableLiveData<Event<ItemListEvent>>()
 
 
     init {
@@ -37,7 +37,7 @@ class DraftViewModel(var dataProvider: DataProvider): ViewModel() {
             val popularById = popularList.groupBy { it.title }
 
             val viewData = createViewData(popularById)
-            _popularData.postValue(viewData)
+            _draftData.postValue(viewData)
 
         }
     }
@@ -48,12 +48,7 @@ class DraftViewModel(var dataProvider: DataProvider): ViewModel() {
         popularById.keys.forEach {
             val popularItems = popularById[it]
             popularItems?.forEach {popularItem: PopularModel ->
-                val item = if (popularItem.isHeader) {
-                    HeaderViewModel("Popular",popularItem)
-                } else {
-                    ItemListingViewModel(popularItem,R.layout.partial_item_draft, LISTING_ITEM, ::onPopularItemListingClicked)
-                }
-                viewData.add(item)
+                viewData.add(ItemListingViewModel(popularItem,R.layout.partial_item_draft, LISTING_ITEM, ::onPopularItemListingClicked))
             }
         }
 
@@ -62,7 +57,7 @@ class DraftViewModel(var dataProvider: DataProvider): ViewModel() {
 
 
     private fun onPopularItemListingClicked(model: Any) {
-        _eventsPopular.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
+        _eventsDraft.postValue(Event(ItemListEvent.ShowSelectedModel(model)))
     }
 
 }
