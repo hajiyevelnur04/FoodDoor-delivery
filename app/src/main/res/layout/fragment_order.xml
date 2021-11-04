@@ -26,6 +26,7 @@
             android:background="@color/bg_color"
             app:tabMode="fixed"
             app:tabGravity="fill"
+            android:paddingHorizontal="@dimen/_16dp"
             app:tabIndicatorGravity="stretch"
             app:tabSelectedTextColor="@color/green"
             app:tabIndicator="@drawable/tab_indicator"

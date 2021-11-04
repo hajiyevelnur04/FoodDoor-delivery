@@ -5,22 +5,23 @@
     <data>
         <variable
             name="viewModel"
-            type="com.runle.fooddoor.viewmodel.itemviewmodel.ItemListingViewModel" />
+            type="com.runle.fooddoor.presentation.fragment.order.draft.DraftViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragment.order.DraftFragment">
+        tools:context=".presentation.fragment.order.draft.DraftFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/category_container"
+            android:id="@+id/draft_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
             android:overScrollMode="never"
             android:padding="@dimen/_12dp"
             android:scrollbars="none"
+            app:itemViewModels="@{viewModel.popularData}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

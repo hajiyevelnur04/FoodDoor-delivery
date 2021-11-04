@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.runle.fooddoor.presentation.fragment.order.ComingFragment
-import com.runle.fooddoor.presentation.fragment.order.DraftFragment
+import com.runle.fooddoor.presentation.fragment.order.draft.DraftFragment
 import com.runle.fooddoor.presentation.fragment.order.HistoryFragment
 
 /**
