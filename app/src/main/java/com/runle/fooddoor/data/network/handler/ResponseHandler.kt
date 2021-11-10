@@ -13,6 +13,10 @@ open class ResponseHandler {
         return Resource.success(data)
     }
 
+    fun <T> handleOffline(data: T): Resource<T> {
+        return Resource.success(data)
+    }
+
     fun <T : Any> handleException(e: Exception): Resource<T> {
         e.printStackTrace()
 
