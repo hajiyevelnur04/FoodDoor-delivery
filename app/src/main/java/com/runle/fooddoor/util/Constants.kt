@@ -6,6 +6,7 @@ import com.runle.fooddoor.BuildConfig
  * Created by elha on 05.05.2021.
  */
 object Constants {
+    const val PEM_FILE = ""
     const val SHARED_PREFERENCES_NAME = "com.runle.fooddoor"
     const val THEME_KEY = "theme"
     const val WELCOME_KEY = "welcome"

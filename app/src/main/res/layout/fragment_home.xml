@@ -47,13 +47,22 @@
                     app:layout_constraintTop_toBottomOf="@+id/main_toolbar" />
 
                 <include
+                    android:id="@+id/collection"
+                    layout="@layout/collection_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+                <include
                     android:id="@+id/popular"
                     layout="@layout/popular_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/banner" />
+                    app:layout_constraintTop_toBottomOf="@+id/collection" />
 
                 <include
                     android:id="@+id/voucher"

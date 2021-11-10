@@ -11,4 +11,5 @@ class OrderRepository(private val orderServices: OrderServices,
                       private val responseHandler: ResponseHandler
 ) {
     suspend fun getOrders() = safeApiCall(responseHandler = responseHandler) { orderServices.getOrders() }
+    suspend fun getOrderById() = safeApiCall(responseHandler = responseHandler) { orderServices.getOrderById() }
 }

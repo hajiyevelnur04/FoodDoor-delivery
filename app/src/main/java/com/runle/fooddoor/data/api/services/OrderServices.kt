@@ -11,4 +11,7 @@ interface OrderServices {
 
     @GET("orders")
     suspend fun getOrders(): Response<List<BannerModel>>
+
+    @GET("orderById")
+    suspend fun getOrderById(): Response<List<BannerModel>>
 }

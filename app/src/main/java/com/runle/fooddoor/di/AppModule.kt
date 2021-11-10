@@ -17,8 +17,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  * Created by elnur on 26.10.21
  */
 val appModule = module {
-    single { PreferenceHelper.customPrefs(androidContext(), Constants.SHARED_PREFERENCES_NAME) }
-    single { provideOkHttpClient() }
+    single { PreferenceHelper.customPrefs(context = androidContext(), Constants.SHARED_PREFERENCES_NAME) }
+    single { provideOkHttpClient(context = androidContext()) }
     single { provideRetrofit(get(), Constants.BASE_URL) }
     single { provideApiService(get()) }
     single { provideNetworkHelper(androidContext()) }
