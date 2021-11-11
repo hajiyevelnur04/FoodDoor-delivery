@@ -47,7 +47,7 @@
             tools:itemCount="5"
             android:overScrollMode="never"
             android:scrollbars="none"
-            app:itemViewModels="@{viewModel.popularData}"
+            app:itemViewModels="@{viewModel.collectionData}"
             tools:listitem="@layout/partial_item_collection"
             android:orientation="horizontal"
             android:layout_height="wrap_content"

@@ -43,6 +43,11 @@ class HomeFragment : Fragment() {
                 handleActionCategory(it)
             }
         })
+        homeViewModel.eventsCollection.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleActionCollection(it)
+            }
+        })
     }
 
     override fun onCreateView(
@@ -56,6 +61,7 @@ class HomeFragment : Fragment() {
         binding.category.categoryContainer.layoutManager = GridLayoutManager(requireContext(),4)
         binding.category.viewModel = homeViewModel
         binding.voucher.viewModel = homeViewModel
+        binding.collection.viewModel = homeViewModel
 
         binding.category.seeAll.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_categoryDetailFragment)
@@ -65,6 +71,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleActionBanner(it: ItemListEvent) {
+        when(it){
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
+        }
+    }
+
+    private fun handleActionCollection(it: ItemListEvent) {
         when(it){
             is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
         }

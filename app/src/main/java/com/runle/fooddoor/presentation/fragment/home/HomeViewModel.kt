@@ -42,6 +42,12 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
     val eventsVoucher: LiveData<Event<ItemListEvent>> get() = _eventsVoucher
     private val _eventsVoucher = MutableLiveData<Event<ItemListEvent>>()
 
+    val collectionData: LiveData<List<ItemViewModel>> get() = _collectionData
+    private val _collectionData = MutableLiveData<List<ItemViewModel>>(emptyList())
+
+    val eventsCollection: LiveData<Event<ItemListEvent>> get() = _eventsCollection
+    private val _eventsCollection = MutableLiveData<Event<ItemListEvent>>()
+
 
     init {
         loadData()
@@ -87,7 +93,28 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
             val voucherViewData = createVoucherViewData(voucherById)
             _voucherData.postValue(voucherViewData)
 
+
+            // create collection list
+            val collectionList = dataProvider.getPopularListData()
+
+            val collectionById = collectionList.groupBy { it.title }
+
+            val collectionViewData = createCollectionViewData(collectionById)
+            _collectionData.postValue(collectionViewData)
+
         }
+    }
+
+    private fun createCollectionViewData(collectionById: Map<String, List<PopularModel>>): List<ItemViewModel> {
+        val viewData = mutableListOf<ItemViewModel>()
+        collectionById.keys.forEach {
+            collectionById[it]?.forEach {model: PopularModel ->
+                viewData.add(ItemListingViewModel(model, R.layout.partial_item_collection,
+                    LISTING_ITEM,:: onBannerItemListingClicked))
+            }
+        }
+
+        return viewData
     }
 
     private fun createBannerViewData(bannerById: Map<Int?, List<BannerModel>>): List<ItemViewModel> {

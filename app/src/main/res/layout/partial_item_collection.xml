@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             tools:src="@drawable/collection_test"
-            android:src="@drawable/test_food"
+            android:src="@drawable/collection_test"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

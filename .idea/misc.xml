@@ -34,17 +34,17 @@
         <entry key="app/src/main/res/layout/back_toolbar.xml" value="0.25" />
         <entry key="app/src/main/res/layout/banner_container.xml" value="0.1" />
         <entry key="app/src/main/res/layout/category_container.xml" value="0.2953216374269006" />
-        <entry key="app/src/main/res/layout/collection_container.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/collection_container.xml" value="0.1234375" />
         <entry key="app/src/main/res/layout/default_toolbar.xml" value="0.22" />
         <entry key="app/src/main/res/layout/filter_container.xml" value="0.374886173383811" />
         <entry key="app/src/main/res/layout/fragment_category_detail.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/fragment_comming.xml" value="0.1875" />
-        <entry key="app/src/main/res/layout/fragment_date_picker.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/layout/fragment_draft.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.221875" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/fragment_market.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_tracking.xml" value="0.2" />
         <entry key="app/src/main/res/layout/header_toolbar.xml" value="0.1875" />
@@ -60,7 +60,7 @@
         <entry key="app/src/main/res/layout/partial_item_banner.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/partial_item_categories.xml" value="0.18" />
         <entry key="app/src/main/res/layout/partial_item_category.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/partial_item_collection.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/partial_item_collection.xml" value="0.1234375" />
         <entry key="app/src/main/res/layout/partial_item_draft.xml" value="0.33" />
         <entry key="app/src/main/res/layout/partial_item_explore.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_header.xml" value="0.2" />
