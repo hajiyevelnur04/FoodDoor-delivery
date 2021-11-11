@@ -4,6 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.runle.fooddoor.R
 import com.runle.fooddoor.viewmodel.itemviewmodel.ItemViewModel
 
 @BindingAdapter("itemViewModels")
@@ -23,6 +24,6 @@ fun getOrCreateAdapter(recyclerView: RecyclerView): BindableRecyclerViewAdapter 
 }
 
 @BindingAdapter(value = ["setImageUrl"])
-fun ImageView.bindImageUrl(url: String?) {
-    Glide.with(this.context).load(url).into(this)
+fun ImageView.setImageUrl(url: Any) {
+    Glide.with(this.context).load(url).error(R.drawable.test_nut).into(this)
 }

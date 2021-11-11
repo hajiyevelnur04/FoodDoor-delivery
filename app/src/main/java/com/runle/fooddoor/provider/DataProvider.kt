@@ -64,10 +64,10 @@ class DataProvider {
     private fun getPopularString(): String {
         return """
             [{"image":"R.drawable.test_food","title":"Rice"},
-            {"image":"R.drawable.test_food","title":"Noodle"},
-            {"image":"R.drawable.test_food","title":"MacChicken"},
-            {"image":"R.drawable.test_food","title":"Bozartma"},
-            {"image":"R.drawable.test_food","title":"Dolma"},
+            {"image":"R.drawable.test_nut","title":"Noodle"},
+            {"image":"R.drawable.test_plate","title":"MacChicken"},
+            {"image":"R.drawable.test_meat","title":"Bozartma"},
+            {"image":"R.drawable.test_draft","title":"Dolma"},
             {"image":"R.drawable.test_food","title":"Salad"}]""".trimIndent()
     }
 

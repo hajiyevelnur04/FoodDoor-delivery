@@ -27,7 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            tools:src="@drawable/test_food"
             android:src="@drawable/test_food"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/title"
@@ -48,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="Rice" />
+            android:text="@{itemViewModel.popularModel.title}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

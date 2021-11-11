@@ -23,7 +23,7 @@
             android:id="@+id/category_detail_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:overScrollMode="never"
             android:padding="@dimen/_12dp"
             android:scrollbars="none"
@@ -33,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:spanCount="2"
+            app:spanCount="3"
             tools:itemCount="8"
             tools:listitem="@layout/partial_item_categories" />
 
