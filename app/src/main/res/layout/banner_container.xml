@@ -4,9 +4,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="com.runle.fooddoor.presentation.fragment.home.HomeFragment"/>
         <variable
             name="viewModel"
             type="com.runle.fooddoor.presentation.fragment.home.HomeViewModel" />
+
+        <variable
+            name="view"
+            type="HomeFragment" />
 
     </data>
 

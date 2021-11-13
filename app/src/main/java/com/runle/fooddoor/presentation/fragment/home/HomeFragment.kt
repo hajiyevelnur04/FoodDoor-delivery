@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.runle.fooddoor.R
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
@@ -26,6 +28,21 @@ class HomeFragment : Fragment() {
         homeViewModel.eventsBanner.observe(viewLifecycleOwner,{ event ->
             event.getContentIfNotHandled()?.let {
                 handleActionBanner(it)
+            }
+        })
+
+        homeViewModel.bannerDataSize.observe(viewLifecycleOwner,{
+            binding.banner.indicator.setDotCount(it.size)
+        })
+
+        binding.banner.bannerRecyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                layoutManager.findFirstCompletelyVisibleItemPosition().let {
+                    if (it >= 0)
+                        binding.banner.indicator.setCurrentPosition(it)
+                }
             }
         })
         homeViewModel.eventsPopular.observe(viewLifecycleOwner,{ event ->

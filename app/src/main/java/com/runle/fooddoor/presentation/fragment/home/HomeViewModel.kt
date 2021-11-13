@@ -27,6 +27,9 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
     val bannerData: LiveData<List<ItemViewModel>> get() = _bannerData
     private val _bannerData = MutableLiveData<List<ItemViewModel>>(emptyList())
 
+    val bannerDataSize: LiveData<List<BannerModel>> get() = _bannerDataSize
+    private val _bannerDataSize = MutableLiveData<List<BannerModel>>(emptyList())
+
     val eventsBanner: LiveData<Event<ItemListEvent>> get() = _eventsBanner
     private val _eventsBanner = MutableLiveData<Event<ItemListEvent>>()
 
@@ -58,6 +61,7 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
             // create banner list
 
             val bannerList = dataProvider.getBannerListData()
+            _bannerDataSize.postValue(bannerList)
 
             val bannerById = bannerList.groupBy { it.id }
 

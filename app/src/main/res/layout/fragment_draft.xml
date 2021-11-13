@@ -19,7 +19,7 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:overScrollMode="never"
-            android:padding="@dimen/_12dp"
+            android:padding="@dimen/_16dp"
             android:scrollbars="none"
             app:itemViewModels="@{viewModel.draftData}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

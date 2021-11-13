@@ -43,9 +43,9 @@
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.221875" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_market.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_order.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_order.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_tracking.xml" value="0.2" />
         <entry key="app/src/main/res/layout/header_toolbar.xml" value="0.1875" />
         <entry key="app/src/main/res/layout/hot_container.xml" value="0.35688405797101447" />
