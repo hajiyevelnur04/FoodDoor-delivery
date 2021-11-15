@@ -5,4 +5,13 @@
     <string name="basket">Basket</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_one">Accept a Job</string>
+    <string name="title_two">Tracking Realtime</string>
+    <string name="title_three">Earn Money</string>
+    <string name="title_four">Enable Your Location</string>
+
+    <string name="title_one_desc">Lorem ipsum dolor sit amet,consecteltur apipsicing elit.Nullam ac vestibulum</string>
+    <string name="title_two_desc">Lorem ipsum dolor sit amet,consecteltur apipsicing elit.Nullam ac vestibulum</string>
+    <string name="title_three_desc">Lorem ipsum dolor sit amet,consecteltur apipsicing elit.Nullam ac vestibulum</string>
+    <string name="title_four_desc">Enable Your Location</string>
 </resources>

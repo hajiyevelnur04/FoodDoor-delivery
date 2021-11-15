@@ -44,6 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_filter_bottom.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_intro.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_market.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_tracking.xml" value="0.2" />
@@ -64,6 +65,7 @@
         <entry key="app/src/main/res/layout/partial_item_draft.xml" value="0.33" />
         <entry key="app/src/main/res/layout/partial_item_explore.xml" value="0.2" />
         <entry key="app/src/main/res/layout/partial_item_header.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/partial_item_intro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/partial_item_popular.xml" value="0.25" />
         <entry key="app/src/main/res/layout/partial_item_tab.xml" value="0.33" />
         <entry key="app/src/main/res/layout/partial_item_tracking.xml" value="0.44789356984478934" />
