@@ -18,8 +18,9 @@ class IntroAdapter() : PagerAdapter() {
 
     var list: List<IntroModel> = listOf(
         IntroModel(title = titles[0], description = description[0],icon = icons[0]),
-        IntroModel(title = titles[1], description = description[0],icon = icons[1]),
-        IntroModel(title = titles[2], description = description[0],icon = icons[2])
+        IntroModel(title = titles[1], description = description[1],icon = icons[1]),
+        IntroModel(title = titles[2], description = description[2],icon = icons[2]),
+        IntroModel(title = titles[3], description = description[3],icon = icons[3])
     )
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {

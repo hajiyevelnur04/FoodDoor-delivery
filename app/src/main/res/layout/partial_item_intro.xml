@@ -57,41 +57,5 @@
             app:layout_constraintTop_toBottomOf="@+id/title"
             tools:text="Activate your location,Order\nfood around you quickly" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/nextBtn"
-            android:layout_width="0dp"
-            android:backgroundTint="@color/orange"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/white"
-            android:insetTop="0dp"
-            android:layout_marginTop="@dimen/_8dp"
-            android:insetBottom="0dp"
-            android:textAllCaps="true"
-            android:visibility="visible"
-            android:text="Get started"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/skip_button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Skip"
-            android:textAllCaps="false"
-            android:textColor="@color/orange"
-            android:textSize="13sp"
-            android:layout_marginTop="@dimen/_8dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nextBtn" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
