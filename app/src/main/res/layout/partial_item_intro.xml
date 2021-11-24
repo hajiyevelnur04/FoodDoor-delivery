@@ -24,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             setImgDrawable="@{model.icon}"
-            tools:src="@drawable/test3" />
+            tools:src="@drawable/test2" />
 
         <TextView
             android:id="@+id/title"
@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="24dp"
+            android:text="@{model.title}"
             android:layout_marginTop="@dimen/_32dp"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -47,7 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{model.title}"
+            android:text="@{model.description}"
             android:layout_marginTop="@dimen/_16dp"
             android:textSize="@dimen/_20dp"
             android:textColor="@color/black"

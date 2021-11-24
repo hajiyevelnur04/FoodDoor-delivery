@@ -27,3 +27,10 @@ fun getOrCreateAdapter(recyclerView: RecyclerView): BindableRecyclerViewAdapter 
 fun ImageView.setImageUrl(url: Any) {
     Glide.with(this.context).load(url).error(R.drawable.test_nut).into(this)
 }
+
+@BindingAdapter(value = ["setImgDrawable"])
+fun ImageView.bindImageResource(resource: Int?) {
+    if (resource != null) {
+        Glide.with(this.context).load(resource).into(this)
+    }
+}

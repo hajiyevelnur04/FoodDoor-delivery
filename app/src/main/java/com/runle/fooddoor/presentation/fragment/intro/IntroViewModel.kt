@@ -46,7 +46,7 @@ class IntroViewModel : BaseViewModel() {
 
     fun nextBtnClick() {
 
-        if (_currentPosition.value == 2)
+        if (_currentPosition.value == 3)
             _navigateToLogin.value = true
         else
             incrementPositionValue()

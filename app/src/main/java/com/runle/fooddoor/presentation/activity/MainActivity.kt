@@ -1,4 +1,4 @@
-package com.runle.fooddoor
+package com.runle.fooddoor.presentation.activity
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.runle.fooddoor.R
 import com.runle.fooddoor.databinding.ActivityMainBinding
 import com.runle.fooddoor.util.setupWithNavigationController
 

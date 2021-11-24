@@ -1,13 +1,11 @@
 package com.runle.fooddoor.presentation.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.runle.fooddoor.FilterType
-import com.runle.fooddoor.R
+import com.runle.fooddoor.data.enums.FilterType
 import com.runle.fooddoor.databinding.FragmentFilterBottomBinding
 
 class FilterBottomFragment : BottomSheetDialogFragment() {
