@@ -37,6 +37,18 @@ class DataProvider {
         return gson.fromJson(getCategoriesString(), typeToken)
     }
 
+    suspend fun getLanguagesListData(): List<LanguageModel> {
+        val typeToken = object : TypeToken<List<LanguageModel>>() {}.type
+        return gson.fromJson(getLanguagesString(), typeToken)
+    }
+
+    private fun getLanguagesString(): String {
+        return """
+            [{"id":1, "title":"English","description":""},
+            {"id":2, "title":"Russian","description":""},
+            {"id":3, "title":"Azerbaijani","description":""}]""".trimIndent()
+    }
+
     private fun getBannerString(): String {
         return """
             [{"id":1, "image":"R.drawable.test_food","title":"Rice","description":""},

@@ -28,6 +28,7 @@ class IntroFragment : BaseFragment() {
         binding.viewModel = introViewModel
         binding.viewPager.addOnPageChangeListener(introViewModel.pageChangeListener)
         binding.viewPager.adapter = IntroAdapter()
+        binding.indicator.attachToPager(binding.viewPager)
 
         binding.lang.setOnClickListener {
             val bottomSheet = LanguageBottomSheet()

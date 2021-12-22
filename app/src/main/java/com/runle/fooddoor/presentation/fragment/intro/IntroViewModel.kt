@@ -44,6 +44,14 @@ class IntroViewModel : BaseViewModel() {
     }
 
 
+    fun skipBtnClick() {
+
+        if (_currentPosition.value == 3 || _currentPosition.value == 0)
+            _navigateToLogin.value = true
+        else
+            decrementPositionValue()
+    }
+
     fun nextBtnClick() {
 
         if (_currentPosition.value == 3)
@@ -55,6 +63,12 @@ class IntroViewModel : BaseViewModel() {
     private fun incrementPositionValue() {
         _currentPosition.value = _currentPosition.value?.let {
             it + 1
+        }
+    }
+
+    private fun decrementPositionValue() {
+        _currentPosition.value = _currentPosition.value?.let {
+            it - 1
         }
     }
 

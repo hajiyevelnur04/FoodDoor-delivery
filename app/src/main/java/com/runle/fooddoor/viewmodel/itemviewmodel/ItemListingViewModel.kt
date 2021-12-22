@@ -29,7 +29,6 @@ class ItemListingViewModel(
         }
     }
     override val viewType: Int = _viewType
-    override val _model: Any = model
 
     fun onClick() {
         onItemClick("$model")

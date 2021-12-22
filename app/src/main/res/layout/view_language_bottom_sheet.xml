@@ -27,12 +27,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4dp"
             android:background="@drawable/bottom_sheet_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:padding="@dimen/_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/close">
 
@@ -41,35 +40,35 @@
                 style="@style/HeaderTextH3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Change language"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Change language" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/description"
                 style="@style/Body3"
-                android:layout_marginTop="@dimen/_4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4dp"
+                android:text="Which language do you prefer?"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                tools:text="Which language do you prefer?" />
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lang_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
                 android:orientation="vertical"
                 android:overScrollMode="never"
                 android:scrollbars="none"
-                android:layout_marginTop="@dimen/_16dp"
                 app:itemViewModels="@{viewModel.languageData}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description"
                 app:spanCount="1"
-                tools:itemCount="5"
+                tools:itemCount="3"
                 tools:listitem="@layout/partial_item_language" />
 
 

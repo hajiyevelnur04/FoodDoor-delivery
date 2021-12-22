@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/primary_light</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/orange</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
@@ -105,6 +105,16 @@
         <item name="android:textSize">@dimen/_16dp</item>
         <item name="android:lineSpacingExtra">@dimen/line25</item>
         <item name="android:textFontWeight">@integer/weight5</item>
+    </style>
+
+    <style name="SlideToActView">
+        <item name="text">SlideToActView</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="text_size">@dimen/slidetoact_default_text_size</item>
+        <item name="area_margin">@dimen/slidetoact_default_area_margin</item>
+        <item name="inner_color">?android:colorBackground</item>
+        <item name="outer_color">?colorAccent</item>
+        <item name="slider_locked">false</item>
     </style>
 
 

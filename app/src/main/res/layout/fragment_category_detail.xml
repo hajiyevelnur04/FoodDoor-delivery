@@ -12,8 +12,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/_16dp"
-        android:layout_marginVertical="@dimen/_16dp"
         tools:context=".presentation.fragment.home.category.CategoryDetailFragment">
 
         <include layout="@layout/back_toolbar"
@@ -34,7 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:spanCount="3"
-            tools:itemCount="8"
+            tools:itemCount="9"
             tools:listitem="@layout/partial_item_categories" />
 
 

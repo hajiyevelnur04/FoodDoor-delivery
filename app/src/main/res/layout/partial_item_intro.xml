@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:background="@color/white"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -34,7 +34,6 @@
             android:gravity="center"
             android:textSize="24dp"
             android:text="@{model.title}"
-            android:layout_marginTop="@dimen/_32dp"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"

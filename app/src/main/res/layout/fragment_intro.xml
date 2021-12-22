@@ -24,6 +24,7 @@
             android:id="@+id/viewPager"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_16dp"
             app:layout_constraintBottom_toTopOf="@+id/nextBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,13 +32,12 @@
 
         <TextView
             android:id="@+id/lang"
-            android:layout_width="@dimen/_32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_48dp"
+            android:layout_height="@dimen/_48dp"
             android:layout_marginTop="@dimen/_8dp"
             android:layout_marginRight="@dimen/_16dp"
             android:background="@drawable/bg_lang_img"
             android:text="En"
-            android:textSize="10dp"
             android:textAllCaps="true"
             android:gravity="center"
             android:textColor="@color/white"
@@ -65,16 +65,20 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/skip_button"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_50dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
             android:text="Skip"
+            android:onClick="@{() -> viewModel.skipBtnClick()}"
             android:textAllCaps="false"
             android:textColor="@color/orange"
-            android:textSize="13sp"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/indicator"
-            app:layout_constraintEnd_toEndOf="@+id/nextBtn"
-            app:layout_constraintStart_toStartOf="@+id/nextBtn" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
             android:id="@+id/indicator"
@@ -84,8 +88,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:spi_dotSpacing="@dimen/_4dp"
             app:spi_dotSelectedColor="@color/orange"
-            android:layout_marginBottom="32dp"
-            app:spi_visibleDotCount="3"
+            android:layout_marginBottom="16dp"
+            app:spi_visibleDotCount="5"
             app:layout_constraintStart_toStartOf="parent" />
 
 
