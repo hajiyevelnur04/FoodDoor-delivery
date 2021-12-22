@@ -1,0 +1,52 @@
+package com.runle.fooddoor.presentation.fragment.home.product
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import org.koin.android.viewmodel.ext.android.viewModel
+import com.runle.fooddoor.databinding.FragmentCategoryDetailBinding
+import com.runle.fooddoor.databinding.FragmentProductBinding
+import com.runle.fooddoor.model.ItemListEvent
+
+class ProductFragment : Fragment() {
+
+    private val productViewModel: ProductViewModel by viewModel()
+    private val binding: FragmentProductBinding by lazy {
+        FragmentProductBinding.inflate(layoutInflater)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        productViewModel.eventsCategory.observe(viewLifecycleOwner,{ event ->
+            event.getContentIfNotHandled()?.let {
+                handleActionBanner(it)
+            }
+        })
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding.lifecycleOwner = this@ProductFragment
+        binding.productContainer.layoutManager = GridLayoutManager(requireContext(),1)
+        binding.viewModel = productViewModel
+
+        return binding.root
+    }
+
+    private fun handleActionBanner(it: ItemListEvent) {
+        when(it){
+            is ItemListEvent.ShowSelectedModel -> showPopularItemDetail()
+        }
+    }
+
+    private fun showPopularItemDetail() {
+        // to do something when item clicked
+    }
+}
