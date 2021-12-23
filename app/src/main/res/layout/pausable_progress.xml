@@ -8,13 +8,13 @@
         android:id="@+id/back_progress"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_26dp"
-        android:background="@color/red" />
+        android:background="@color/gray" />
 
     <View
         android:id="@+id/front_progress"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_26dp"
-        android:background="@color/white"
+        android:background="@color/primary"
         android:visibility="invisible"
         tools:visibility="visible"/>
 
@@ -22,6 +22,6 @@
         android:id="@+id/max_progress"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_26dp"
-        android:background="#fff"
+        android:background="@color/red"
         android:visibility="gone" />
 </FrameLayout>

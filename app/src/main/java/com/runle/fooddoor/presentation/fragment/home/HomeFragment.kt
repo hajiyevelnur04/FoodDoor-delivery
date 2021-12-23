@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.runle.fooddoor.R
+import com.runle.fooddoor.base.BaseFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.runle.fooddoor.databinding.FragmentHomeBinding
 import com.runle.fooddoor.model.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     private val homeViewModel: HomeViewModel by viewModel()
     private val binding: FragmentHomeBinding by lazy {
@@ -25,6 +26,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().window.statusBarColor = requireActivity().resources.getColor(R.color.primary)
+
         homeViewModel.eventsBanner.observe(viewLifecycleOwner,{ event ->
             event.getContentIfNotHandled()?.let {
                 handleActionBanner(it)

@@ -8,7 +8,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#0F6657</color>
     <color name="bg_color">#f8f9fa</color>
-    <color name="orange">#ef9c55</color>
+    <color name="orange">#ef9c15</color>
     <color name="accent">#3d7368</color>
     <color name="primary_light">#4caa90</color>
     <color name="transparent">#00FFFFFF</color>
@@ -38,4 +38,6 @@
 
     <color name="slidetoact_white">#FFFFFF</color>
     <color name="slidetoact_defaultAccent">#FF4081</color>
+
+    <color name="bg_white">#FCF5DB</color>
 </resources>

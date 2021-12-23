@@ -5,5 +5,6 @@ enum class Status {
     ERROR,
     LOADING,
     NETWORK,
-    EMPTY
+    EMPTY,
+    TAG
 }

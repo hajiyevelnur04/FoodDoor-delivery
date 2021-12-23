@@ -1,16 +1,19 @@
 package com.runle.fooddoor.presentation.fragment.home
 
+import android.os.Handler
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.runle.fooddoor.R
+import com.runle.fooddoor.base.BaseViewModel
+import com.runle.fooddoor.data.enums.Status
 import com.runle.fooddoor.model.*
 import com.runle.fooddoor.provider.DataProvider
 import com.runle.fooddoor.viewmodel.itemviewmodel.*
 import kotlinx.coroutines.launch
 
-class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
+class HomeViewModel(var dataProvider: DataProvider): BaseViewModel() {
 
     companion object {
         const val HEADER_ITEM = 0
@@ -57,56 +60,63 @@ class HomeViewModel(var dataProvider: DataProvider): ViewModel() {
     }
 
     private fun loadData() {
-        viewModelScope.launch {
-            // create banner list
+        changeStatus(Status.LOADING)
+        Handler().postDelayed({
+            //doSomethingHere()
+            coroutineScope.launch {
+                // create banner list
 
-            val bannerList = dataProvider.getBannerListData()
-            _bannerDataSize.postValue(bannerList)
+                val bannerList = dataProvider.getBannerListData()
+                _bannerDataSize.postValue(bannerList)
 
-            val bannerById = bannerList.groupBy { it.id }
+                val bannerById = bannerList.groupBy { it.id }
 
-            val bannerViewData = createBannerViewData(bannerById)
-            _bannerData.postValue(bannerViewData)
+                val bannerViewData = createBannerViewData(bannerById)
+                _bannerData.postValue(bannerViewData)
 
-            // create popular list
-            val popularList = dataProvider.getPopularListData()
+                // create popular list
+                val popularList = dataProvider.getPopularListData()
 
-            val popularById = popularList.groupBy { it.title }
+                val popularById = popularList.groupBy { it.title }
 
-            val viewData = createViewData(popularById)
-            _popularData.postValue(viewData)
+                val viewData = createViewData(popularById)
+                _popularData.postValue(viewData)
 
-            // create category list
+                // create category list
 
-            val categoryList = dataProvider.getCategoryListData()
+                val categoryList = dataProvider.getCategoryListData()
 
-            val categoryById = categoryList.groupBy { categoryModel->
-                categoryModel.id }
+                val categoryById = categoryList.groupBy { categoryModel->
+                    categoryModel.id }
 
-            val categoryViewData = createCategoryViewData(categoryById)
-            _categoryData.postValue(categoryViewData)
-
-
-            // create category list
-
-            val voucherList = dataProvider.getVoucherListData()
-
-            val voucherById = voucherList.groupBy { voucher->
-                voucher.id }
-
-            val voucherViewData = createVoucherViewData(voucherById)
-            _voucherData.postValue(voucherViewData)
+                val categoryViewData = createCategoryViewData(categoryById)
+                _categoryData.postValue(categoryViewData)
 
 
-            // create collection list
-            val collectionList = dataProvider.getPopularListData()
+                // create category list
 
-            val collectionById = collectionList.groupBy { it.title }
+                val voucherList = dataProvider.getVoucherListData()
 
-            val collectionViewData = createCollectionViewData(collectionById)
-            _collectionData.postValue(collectionViewData)
+                val voucherById = voucherList.groupBy { voucher->
+                    voucher.id }
 
-        }
+                val voucherViewData = createVoucherViewData(voucherById)
+                _voucherData.postValue(voucherViewData)
+
+
+                // create collection list
+                val collectionList = dataProvider.getPopularListData()
+
+                val collectionById = collectionList.groupBy { it.title }
+
+                val collectionViewData = createCollectionViewData(collectionById)
+                _collectionData.postValue(collectionViewData)
+
+                changeStatus(Status.SUCCESS)
+
+            }
+        }, 6000)
+
     }
 
     private fun createCollectionViewData(collectionById: Map<String, List<PopularModel>>): List<ItemViewModel> {

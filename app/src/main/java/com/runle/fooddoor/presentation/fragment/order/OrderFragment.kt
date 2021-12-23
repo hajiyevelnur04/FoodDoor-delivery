@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
+import com.runle.fooddoor.R
 import com.runle.fooddoor.adapter.TabSelectionPageAdapter
+import com.runle.fooddoor.base.BaseFragment
 import com.runle.fooddoor.databinding.FragmentOrderBinding
 import org.koin.android.ext.android.bind
 
-class OrderFragment : Fragment() {
+class OrderFragment : BaseFragment() {
     val headerArray = arrayOf(
         "Coming",
         "History",
@@ -26,6 +28,7 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        binding.headerToolbar.image.setImageResource(R.drawable.my_order)
         setupViewPager()
         return binding.root
     }

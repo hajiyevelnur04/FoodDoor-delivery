@@ -8,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.runle.fooddoor.R
+import com.runle.fooddoor.base.BaseFragment
 import com.runle.fooddoor.databinding.WelcomeFragmentBinding
 import com.runle.fooddoor.presentation.fragment.welcome.model.WelcomeModel
 import com.runle.fooddoor.presentation.fragment.welcome.util.convertLongArrayListToLongArray
@@ -20,27 +24,15 @@ import com.runle.fooddoor.presentation.fragment.welcome.viewholder.StoriesProgre
  */
 class WelcomeFragment: Fragment(), StoriesProgressView.StoriesListener, WelcomeView {
 
-    // content image
-    private var contentImages = arrayListOf<String>()
-
-    // logo image
-    private var logoImages = arrayListOf<String>()
-
-    //title
-    private var titles = arrayListOf<String>()
-
-    //description
-    private var descriptions = arrayListOf<String>()
-
     private var counter = 0
-    private val resources = arrayListOf<String>()
-
-    private val durations = arrayListOf<Long>()
-
     var pressTime = 0L
     var limit = 500L
 
+    private val durations = arrayListOf<Long>()
+
     lateinit var welcomeModels: List<WelcomeModel>
+
+    private val safeArgs by navArgs<WelcomeFragmentArgs>()
 
     var progressCount: Int  = 0
 
@@ -73,12 +65,15 @@ class WelcomeFragment: Fragment(), StoriesProgressView.StoriesListener, WelcomeV
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        requireActivity().window.navigationBarColor = requireActivity().resources.getColor(R.color.bg_white)
+        requireActivity().window.statusBarColor = requireActivity().resources.getColor(R.color.bg_white)
 
+        welcomeModels = safeArgs.welcomeModels
         binding.getStarted.setOnClickListener {
             closeFragment()
         }
 
-        animateBackground(binding.container)
+        //animateBackground(binding.container)
         // iterate through welcome models
         iterateWelcomeModel()
         initStories()
@@ -108,7 +103,7 @@ class WelcomeFragment: Fragment(), StoriesProgressView.StoriesListener, WelcomeV
     }
 
     private fun closeFragment() {
-        parentFragmentManager.beginTransaction().remove(this).commit()
+        findNavController().popBackStack()
     }
 
     private fun animateBackground(constraintLayout: ConstraintLayout) {
@@ -120,31 +115,21 @@ class WelcomeFragment: Fragment(), StoriesProgressView.StoriesListener, WelcomeV
 
     private fun iterateWelcomeModel() {
         for (welcomeModel in welcomeModels) {
-            contentImages.add(welcomeModel.contentImage)
-            titles.add(welcomeModel.title)
-            descriptions.add(welcomeModel.description)
             durations.add(welcomeModel.duration)
-            logoImages.add(welcomeModel.logo)
         }
     }
 
     private fun setViewByCounter(counter: Int) {
-        // last view
-        binding.getStarted.visibility = if (counter + 1 == welcomeModels.size) View.VISIBLE else View.INVISIBLE
-
-        binding.titleWelcome.text = titles[counter]
-        binding.description.text = descriptions[counter]
-        context?.let {
-            Glide.with(it)
-                .load(contentImages[counter])
-                .into(binding.contentImage)
-        }
+        binding.welcomeModel = welcomeModels[counter]
+        binding.lastPageContainer.visibility = if (counter + 1 == welcomeModels.size) View.VISIBLE else View.GONE
+        binding.info.visibility = if (counter + 1 == welcomeModels.size) View.GONE else View.VISIBLE
     }
 
 
     override fun onComplete() {
         // start again
         counter = 0
+        closeFragment()
     }
 
     override fun onPrev() {

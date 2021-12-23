@@ -8,5 +8,6 @@ enum class ViewState {
     LOADING,
     ERROR,
     NETWORK,
-    EMPTY
+    EMPTY,
+    TAG
 }

@@ -10,6 +10,15 @@
             type="com.runle.fooddoor.presentation.fragment.home.HomeViewModel" />
     </data>
 
+    <com.runle.fooddoor.util.MultiStateView
+        android:id="@+id/msv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        app:status="@{viewModel.status}"
+        app:msv_emptyView="@layout/empty_view"
+        app:msv_loadingView="@layout/loading_view">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,4 +68,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.runle.fooddoor.util.MultiStateView>
 </layout>

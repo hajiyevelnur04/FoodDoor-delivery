@@ -8,6 +8,7 @@ buildscript {
         retrofit = "2.9.0"
         okhttp = "4.9.1"
         timber_version = "5.0.1"
+        lottieVersion = "4.2.0"
     }
     repositories {
         google()

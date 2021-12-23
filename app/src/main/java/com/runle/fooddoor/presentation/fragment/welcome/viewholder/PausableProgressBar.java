@@ -65,7 +65,7 @@ final class PausableProgressBar extends FrameLayout {
     }
 
     void setMinWithoutCallback() {
-        maxProgressView.setBackgroundResource(R.color.gray);
+        maxProgressView.setBackgroundResource(R.color.primary);
 
         maxProgressView.setVisibility(VISIBLE);
         if (animation != null) {
@@ -75,7 +75,7 @@ final class PausableProgressBar extends FrameLayout {
     }
 
     void setMaxWithoutCallback() {
-        maxProgressView.setBackgroundResource(R.color.white);
+        maxProgressView.setBackgroundResource(R.color.primary);
 
         maxProgressView.setVisibility(VISIBLE);
         if (animation != null) {
@@ -85,7 +85,7 @@ final class PausableProgressBar extends FrameLayout {
     }
 
     private void finishProgress(boolean isMax) {
-        if (isMax) maxProgressView.setBackgroundResource(R.color.white);
+        if (isMax) maxProgressView.setBackgroundResource(R.color.primary);
         maxProgressView.setVisibility(isMax ? VISIBLE : GONE);
         if (animation != null) {
             animation.setAnimationListener(null);
