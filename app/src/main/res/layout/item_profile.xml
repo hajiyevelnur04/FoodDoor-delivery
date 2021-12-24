@@ -20,33 +20,28 @@
         android:onClick="@{() -> itemViewModel.onClick()}"
         android:padding="@dimen/_8dp">
 
-        <ImageView
-            android:id="@+id/oval"
-            android:layout_width="@dimen/_8dp"
-            android:layout_height="8dp"
-            android:src="@drawable/oval2"
-            android:layout_marginLeft="-2dp"
-            app:layout_constraintStart_toEndOf="@+id/materialCardView"
-            app:layout_constraintTop_toTopOf="@+id/materialCardView" />
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="@dimen/_40dp"
-            android:layout_marginHorizontal="@dimen/_16dp"
-            android:layout_marginVertical="@dimen/_8dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardMaxElevation="8dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="false"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
+                android:layout_width="@dimen/_40dp"
+                android:layout_height="@dimen/_40dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:layout_margin="@dimen/_8dp"
+                app:cardMaxElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="false"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/voucher"
@@ -59,9 +54,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/oval"
+            android:layout_width="@dimen/_8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="-15dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/oval2"
+            app:layout_constraintStart_toEndOf="@+id/item_container"
+            app:layout_constraintTop_toTopOf="@+id/item_container" />
 
 
         <TextView
@@ -69,16 +74,15 @@
             style="@style/Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_32dp"
-            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginHorizontal="@dimen/_8dp"
             android:ellipsize="end"
             android:gravity="start"
             android:maxLines="1"
             android:text="My voucher"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/materialCardView"
-            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+            app:layout_constraintStart_toStartOf="@+id/item_container"
+            app:layout_constraintTop_toBottomOf="@+id/item_container" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

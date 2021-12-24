@@ -20,6 +20,11 @@
 
 
     <!--    Gray-->
+    <color name="gray_bg">#8F92A1</color>
+    <color name="gray_bg_10">#108F92A1</color>
+    <color name="gray_bg_30">#308F92A1</color>
+    <color name="gray_bg_60">#608F92A1</color>
+    <color name="gray_bg_90">#908F92A1</color>
     <color name="gray">#D1D1D1</color>
     <color name="gray1">#F3F3F5</color>
     <color name="gray10">#E3E3E9</color>
