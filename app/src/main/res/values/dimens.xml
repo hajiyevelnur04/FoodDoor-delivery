@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--    Line Heights-->
+    <dimen name="line15">1.5dp</dimen>
     <dimen name="line25">2.5dp</dimen>
     <dimen name="line35">3.5dp</dimen>
     <dimen name="line45">4.5dp</dimen>
+    <dimen name="line55">5.5dp</dimen>
+    <dimen name="line65">6.5dp</dimen>
 
     <!--    Font Weights-->
     <integer name="weight5">500</integer>
@@ -14,7 +17,10 @@
 
     <!--    Body texts-->
     <dimen name="b1">15sp</dimen>
+    <dimen name="b2">14sp</dimen>
     <dimen name="b3">13sp</dimen>
+    <dimen name="b4">12sp</dimen>
+    <dimen name="b5">11sp</dimen>
 
 
     <!--    Footnotes & Help texts-->

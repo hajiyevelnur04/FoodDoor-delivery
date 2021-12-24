@@ -19,12 +19,22 @@
         android:onClick="@{() -> itemViewModel.onClick()}"
         android:padding="@dimen/_8dp">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/discount_color"
+            android:textColor="@color/white"
+            android:padding="@dimen/_4dp"
+            android:text="20 %"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@+id/image" />
+
         <ImageView
             android:id="@+id/favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_favorite"
-            app:tint="#EF8E91"
+            app:tint="@color/discount_color"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/image"
@@ -35,10 +45,9 @@
             android:id="@+id/image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_gravity="bottom|end"
             android:src="@drawable/test_food"
+            android:scaleType="center"
             android:visibility="visible"
-
             app:layout_constraintBottom_toTopOf="@+id/title"
             app:layout_constraintEnd_toStartOf="@+id/favorite"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,15 +72,29 @@
         <TextView
             android:id="@+id/price"
             style="@style/HeaderText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
+            android:textStyle="bold"
             android:paddingBottom="@dimen/_1dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/title"
             tools:text="$6" />
+
+        <TextView
+            android:id="@+id/old_price"
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/_16dp"
+            android:textColor="@color/gray_bg"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/_1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/price"
+            tools:text="$16" />
 
 
 

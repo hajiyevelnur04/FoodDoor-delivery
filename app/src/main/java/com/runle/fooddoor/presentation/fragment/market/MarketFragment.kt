@@ -25,6 +25,7 @@ class MarketFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        binding.header.image.setImageResource(R.drawable.market)
         return binding.root
     }
 

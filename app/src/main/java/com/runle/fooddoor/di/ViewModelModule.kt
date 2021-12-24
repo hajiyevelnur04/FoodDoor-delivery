@@ -7,6 +7,7 @@ import com.runle.fooddoor.presentation.fragment.home.category.CategoryDetailView
 import com.runle.fooddoor.presentation.fragment.intro.IntroViewModel
 import com.runle.fooddoor.presentation.fragment.order.draft.DraftViewModel
 import com.runle.fooddoor.presentation.fragment.profile.ProfileViewModel
+import com.runle.fooddoor.presentation.fragment.profile.voucher.VoucherViewModel
 import com.runle.fooddoor.presentation.view.lang.LanguageBottomSheetViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -22,4 +23,5 @@ val viewModelModule = module {
     viewModel { IntroViewModel() }
     viewModel { LanguageBottomSheetViewModel(get()) }
     viewModel { ProfileViewModel(get()) }
+    viewModel { VoucherViewModel(get()) }
 }

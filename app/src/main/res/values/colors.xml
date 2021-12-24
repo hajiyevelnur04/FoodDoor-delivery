@@ -19,9 +19,13 @@
     <!--    White-->
 
 
+    <color name="black_10">#10000000</color>
+    <color name="black_50">#50000000</color>
+    <color name="black_90">#90000000</color>
     <!--    Gray-->
     <color name="gray_bg">#8F92A1</color>
     <color name="gray_bg_10">#108F92A1</color>
+    <color name="gray_bg_20">#208F92A1</color>
     <color name="gray_bg_30">#308F92A1</color>
     <color name="gray_bg_60">#608F92A1</color>
     <color name="gray_bg_90">#908F92A1</color>
@@ -45,4 +49,5 @@
     <color name="slidetoact_defaultAccent">#FF4081</color>
 
     <color name="bg_white">#FCF5DB</color>
+    <color name="discount_color">#EF8E91</color>
 </resources>

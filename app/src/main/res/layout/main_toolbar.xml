@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_more"
         app:layout_constraintBottom_toBottomOf="@+id/icon"
-        app:layout_constraintEnd_toEndOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/icon" />
 
     <ImageView
@@ -46,22 +46,14 @@
         app:layout_constraintStart_toEndOf="@+id/location_icon"
         app:layout_constraintTop_toTopOf="@+id/location_icon" />
 
-
-    <EditText
-        android:id="@+id/search"
-        style="@style/SearchViewCustom"
-        android:layout_marginHorizontal="@dimen/_4dp"
+    <include
         android:layout_marginVertical="@dimen/_16dp"
-        android:hint="@string/search_title"
-        android:lines="1"
-        android:maxLines="1"
-        android:paddingStart="@dimen/_20dp"
-        android:outlineAmbientShadowColor="@color/black"
-        android:singleLine="true"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location_text" />
+        layout="@layout/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/location_text"
+        tools:layout_editor_absoluteX="16dp" />
+
 
 
 

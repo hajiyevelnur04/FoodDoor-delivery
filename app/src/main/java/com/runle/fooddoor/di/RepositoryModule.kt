@@ -8,7 +8,5 @@ import org.koin.dsl.module
  */
 
 val repoModule = module {
-    single {
-        DataProvider()
-    }
+    single { DataProvider() }
 }

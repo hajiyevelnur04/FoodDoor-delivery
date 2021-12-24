@@ -16,7 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             tools:src="@drawable/ic_menu_favorite"
-            android:layout_marginLeft="@dimen/_16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
